@@ -20,3 +20,8 @@ app.use(async(ctx,next)=>{
 })
 app.listen(3000)
 console.log('koa2已经开始监听3000端口');
+// 洋葱圈模型
+// Koa的洋葱模型是以next()函数为分割点，先由外到内执行Request的逻辑，
+// 然后再由内到外执行Response的逻辑，这里的request的逻辑，
+// 我们可以理解为是next之前的内容，response的逻辑是next函数之后的内容，
+// 也可以说每一个中间件都有两次处理时机。洋葱模型的核心原理主要是借助compose方法
